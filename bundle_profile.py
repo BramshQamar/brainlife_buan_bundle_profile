@@ -16,9 +16,9 @@ if __name__ == '__main__':
         config = json.load(config_json)
 
 
-    fname_bundles = config .get('model_bundles')
-    fname_subject = config .get('subject')
-    no_disks = config .get('no_disks')
+    fname_bundles = config.get('model_bundles')
+    fname_subject = config.get('subject')
+    no_disks = config.get('no_disks')
 
     b = os.path.join(fname_subject, "rec_bundles")
     c = os.path.join(fname_subject, "org_bundles")
