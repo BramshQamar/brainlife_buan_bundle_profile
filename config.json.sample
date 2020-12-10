@@ -1,0 +1,5 @@
+{
+    "no_disks": 100,
+    "model_bundles": "test_data/model_bundles"
+    "subject": "test_data/subjects"
+}
