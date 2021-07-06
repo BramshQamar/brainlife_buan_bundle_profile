@@ -111,8 +111,6 @@ def buan_bundle_profiles(mb, bd, org_bd, measure,
                                                          affine_r)
 
         fm = measure[:-7]
-        # bm = mb[:-4]
-
 
         dt = dict()
 
@@ -127,12 +125,14 @@ def main(argv):
 
     print ('Number of arguments:', len(argv), 'arguments.')
     print ('Argument List:', str(argv))
-    out_dir = argv[0][:-4]
+
+    out_dir = os.path.join(argv[5], argv[0][:-4])
+
 
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
-    buan_bundle_profiles(argv[0], argv[1], argv[2], argv[3], 100,
+    buan_bundle_profiles(argv[0], argv[1], argv[2], argv[3], int(argv[4]),
                          out_dir)
 
 if __name__ == "__main__":
