@@ -1,5 +1,7 @@
 {
     "no_disks": 100,
-    "model_bundles": "test_data/model_bundles"
-    "subject": "test_data/subjects"
+    "model_bundles": "test_data/AF_L.trk"
+    "rec_bundle": "test_data/moved_AF_L__recognized.trk"
+    "org_bundle": "test_data/streamlines_moved_AF_L__labels__recognized_orig.trk"
+    "measure": "test_data/fa.nii.gz"
 }
