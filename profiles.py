@@ -121,19 +121,29 @@ def buan_bundle_profiles(mb, bd, org_bd, measure,
     print("total time taken in minutes = ", (-t + time())/60)
 
 
-def main(argv):
+if __name__ == "__main__":
+   
+    # Create Brainlife's output dirs if don't exist
+    if not os.path.exists('output'):
+        os.mkdir('output')
 
-    print ('Number of arguments:', len(argv), 'arguments.')
-    print ('Argument List:', str(argv))
+    # Read Brainlife's config.json
+    with open('config.json', encoding='utf-8') as config_json:
+        config = json.load(config_json)
 
-    out_dir = os.path.join(argv[5], argv[0][:-4])
+
+    model_bundle = config.get('model_bundle')
+    rec_bundle = config.get('rec_bundle')
+    org_bundle = config.get('org_bundle')
+    no_disks = config.get('no_disks')
+    measure = config.get('measure')
+
+
+    out_dir = os.path.join(output', model_bundle[:-4])
 
 
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
-
-    buan_bundle_profiles(argv[0], argv[1], argv[2], argv[3], int(argv[4]),
+    
+    buan_bundle_profiles(model_bundle, rec_bundle , org_bundle, measure, int(no_disks),
                          out_dir)
-
-if __name__ == "__main__":
-   main(sys.argv[1:])
