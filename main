@@ -5,4 +5,4 @@
 
 set -e
 
-singularity exec -e docker://brainlife/dipy:1.1.1 ./bundle_profile.py
+singularity exec -e docker://brainlife/dipy:1.1.1 ./profiles.py
