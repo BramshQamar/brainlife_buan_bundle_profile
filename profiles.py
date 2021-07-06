@@ -110,7 +110,7 @@ def buan_bundle_profiles(mb, bd, org_bd, measure,
         transformed_orig_bundles = transform_streamlines(orig_bundles,
                                                          affine_r)
 
-        fm = measure[:-7]
+        fm = os.path.split(measure)[1][:-7]
 
         dt = dict()
 
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     no_disks = config.get('no_disks')
     measure = config.get('measure')
 
-
-    out_dir = os.path.join(output', model_bundle[:-4])
+    mb = os.path.split(model_bundle)[1]
+    out_dir = os.path.join(output', mb[:-4])
 
 
     if not os.path.exists(out_dir):
