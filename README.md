@@ -1,10 +1,10 @@
 # BrainLife BUAN Bundle Profile
 
-This is a Brainlife App for generating BUAN bundle profile. 
+This is a Brainlife App for generating BUAN bundle profiles. 
 
 ## App Description
 
- The App creates bundle profiles of the pathways and saves the information in HDF5 files. This app implements bundle profiles method presented in Bundle analytics, a computational framework for investigating the shapes and profiles of brain pathways across populations paper [1].
+ The App creates bundle profiles of the pathways and saves the information in csv files. This app implements bundle profiles method presented in Bundle analytics, a computational framework for investigating the shapes and profiles of brain pathways across populations paper [1].
 
 ## Authors
 
