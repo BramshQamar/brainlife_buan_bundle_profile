@@ -1,5 +1,50 @@
 # BrainLife BUAN Bundle Profile
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Computes BUAN bundle profiles for one subject with DIPY: assigns points of a recognised bundle to segments along a model bundle and samples an anatomical measure such as FA along them, saving CSV files.**
+
+Implements the bundle-profile step of Bundle Analytics (BUAN): the model bundle (standard space) and the subject's recognised bundle (common space) define an assignment of points to no_disks segments, and the measure map is sampled on the subject's bundle in native space. Use it after bundle recognition to obtain along-tract profiles for group statistics. As committed, profiles.py on this branch has a syntax error and does not import json, and the registry parameter key is malformed, so the App is unlikely to run.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/track/trk` ×3 · `neuro/tensor` |
+| 📤 **Outputs** | `raw` |
+| 🐳 **Container** | `brainlife/dipy:1.1.1` |
+| ⚙️ **Resources** | 1 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.540](https://doi.org/10.25663/brainlife.app.540) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `model_bundle` | `neuro/track/trk` | yes | Model bundle in standard space |
+| `rec_bundle` | `neuro/track/trk` | yes | Subject's bundle in common space |
+| `org_bundle` | `neuro/track/trk` | yes | Subject's bundle in native space |
+| `metric` | `neuro/tensor` | yes | Anatomical measures such as FA. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `raw` | output directory |
+
+<details>
+<summary><b>⚙️ Parameters</b> (1)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `"no_disks": 100,` | number | `100` | The number of segments along the length of the tract. |
+
+</details>
+
+📚 **References used by this App:**
+- Chandio BQ et al. Bundle analytics, a computational framework for investigating the shapes and profiles of brain pathways across populations. Scientific Reports 10:17149 (2020).
+- Garyfallidis E et al. Dipy, a library for the analysis of diffusion MRI data. Frontiers in Neuroinformatics 8:8 (2014). [doi:10.3389/fninf.2014.00008](https://doi.org/10.3389/fninf.2014.00008)
+- Avesani P et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This is a Brainlife App for generating BUAN bundle profile. 
 
 ## App Description
